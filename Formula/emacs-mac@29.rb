@@ -18,6 +18,13 @@ class EmacsMacAT29 < Formula
   end
 
   patch do
+    # patch to fix tree-sitter to version 0.25, as building on newer versions
+    # breaks for now
+    url (@@urlResolver.patch_url "fix-tree-sitter-version"), using: CopyDownloadStrategy
+    sha256 "b3e43ad37ef6077967abb8c5a2cd612f3ba4ba67527fc34869066d836cfa31b0"
+  end
+
+  patch do
     # patch for multi-tty support, see the following links for details
     # https://bitbucket.org/mituharu/emacs-mac/pull-requests/2/add-multi-tty-support-to-be-on-par-with/diff
     # https://ylluminarious.github.io/2019/05/23/how-to-fix-the-emacs-mac-port-for-multi-tty-access/
@@ -66,7 +73,7 @@ class EmacsMacAT29 < Formula
   depends_on "texinfo"
   depends_on "jansson" => :recommended
   depends_on "libxml2" => :recommended
-  depends_on "tree-sitter@0.25" => :recommended
+  depends_on "tree-sitter" => :recommended
   depends_on "dbus" => :optional
   depends_on "glib" => :optional
   depends_on "imagemagick" => :optional
