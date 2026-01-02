@@ -1,0 +1,25 @@
+From 5ee7b79c875879cfed91faad118c07d094406051 Mon Sep 17 00:00:00 2001
+From: Bruno Paiva <56236873+brunorochapaiva@users.noreply.github.com>
+Date: Fri, 2 Jan 2026 13:13:19 +0000
+Subject: [PATCH] Fix tree-sitter version 0.25
+
+---
+ Formula/emacs-mac@29.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Formula/emacs-mac@29.rb b/Formula/emacs-mac@29.rb
+index 001bc5e..d315b43 100644
+--- a/Formula/emacs-mac@29.rb
++++ b/Formula/emacs-mac@29.rb
+@@ -66,7 +66,7 @@ class EmacsMacAT29 < Formula
+   depends_on "texinfo"
+   depends_on "jansson" => :recommended
+   depends_on "libxml2" => :recommended
+-  depends_on "tree-sitter" => :recommended
++  depends_on "tree-sitter@0.25" => :recommended
+   depends_on "dbus" => :optional
+   depends_on "glib" => :optional
+   depends_on "imagemagick" => :optional
+-- 
+2.52.0
+
